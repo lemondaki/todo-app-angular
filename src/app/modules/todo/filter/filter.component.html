@@ -1,0 +1,8 @@
+<div class="filter">
+  <p class="filter-title user-not-select">Filter</p>
+  <div class="filter-choise user-not-select">
+    <ng-container *ngFor="let filterStatus of listFilterStatus">
+      <app-radio-button [filterStatus]="filterStatus"></app-radio-button>
+    </ng-container>
+  </div>
+</div> 

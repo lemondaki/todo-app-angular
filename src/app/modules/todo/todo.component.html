@@ -1,0 +1,50 @@
+<app-toast-notification></app-toast-notification>
+<section id="app" class="custom-shadow">
+  <div class="todo-body">
+    <header>
+      <p>
+        <i class="fas fa-check-square"></i>
+        <span class="user-not-select">TODO APP</span>
+      </p>
+    </header>
+
+    <div *ngIf="isLoading" class="loading">
+      <h2>Loading todo...</h2>
+    </div>
+
+    <main class="todo-main" *ngIf="!isLoading">
+      <main class="description user-not-select">
+        <p>You have {{ activeCount }} todos need to be done!</p>
+      </main>
+
+      <main class="top-card">
+        <app-filter></app-filter>
+        <app-button [type]="'primary-btn'" (click)="onClickCreateButton()"
+          >Create new todo
+        </app-button>
+      </main>
+
+      <hr class="mt-3" />
+      <div *ngIf="filterToDo.length >= 1; else noTodo" class="todo-list">
+        <ng-container *ngFor="let todo of filterToDo">
+          <app-todo-item [todo]="todo"></app-todo-item>
+        </ng-container>
+      </div>
+      <ng-template #noTodo>
+        <div class="todo-list-description">
+          <p>
+            {{
+              activeFilter === FilterStatus.ACTIVE && todos.length >= 1
+                ? "Congratulations, you completed all your todos!🚀"
+                : activeFilter === FilterStatus.COMPLETED && todos.length >= 1
+                ? "You haven't finished any todo yet, just do it!🔥"
+                : "You don't have any todo yet, add a new todo!"
+            }}
+          </p>
+        </div>
+      </ng-template>
+    </main>
+  </div>
+  <app-create-edit-todo *ngIf="isShowDialogCreateEdit"></app-create-edit-todo>
+  <app-delete-todo *ngIf="isShowDialogDelete"></app-delete-todo>
+</section>

@@ -1,0 +1,22 @@
+@import "../../../shared/style/mixin.scss";
+.btn {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: none;
+  @include flex-align-center;
+  font-size: 20px;
+  color: #fff;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+  user-select: none;
+}
+
+.disable {
+  background-color: #ccc;
+  &:hover {
+    cursor: not-allowed;
+  }
+}

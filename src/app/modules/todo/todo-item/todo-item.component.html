@@ -1,0 +1,59 @@
+<div class="todo-item custom-shadow">
+  <div class="todo-item-left">
+    <div class="">
+      <div class="form-check">
+        <app-checkbox
+          (eventToggleTodo)="handleToggleTodo($event)"
+          [todo]="todo"
+        ></app-checkbox>
+      </div>
+    </div>
+    <div class="todo-infor">
+      <h3
+        class="todo-task user-not-select"
+        [ngClass]="{ completed: todo.isCompleted }"
+      >
+        {{ todo.task }}
+      </h3>
+      <div class="label-todo">
+        <span
+          class="label user-not-select"
+          [class]="todo.isCompleted ? 'success-label' : 'primary-label'"
+        >
+          {{ todo.isCompleted ? "Done" : "Pending" }}
+        </span>
+        <span
+          class="label user-not-select"
+          [class]="
+            handleCheckDeadline(todo) === LabelTodoStatus.LATE
+              ? 'danger-label'
+              : handleCheckDeadline(todo) === LabelTodoStatus.FAR
+              ? 'secondary-label'
+              : handleCheckDeadline(todo) === LabelTodoStatus.NEAR
+              ? 'warning-label'
+              : ''
+          "
+        >
+          {{ labelStatus }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="todo-item-right">
+    <p class="datetime-infor user-not-select">
+      <i class="fa-solid fa-clock mr-5"></i>
+      <span>{{ todo.deadline | date : "dd/MM/yyyy HH:mm" }}</span>
+    </p>
+    <div class="action-todo">
+      <p class="action-edit user-not-select" (click)="onClickEditButton(todo)">
+        <i class="fas fa-pencil-alt"></i> <span>Edit</span>
+      </p>
+      <p
+        class="action-delete user-not-select"
+        (click)="onClickDeleteButton(todo)"
+      >
+        <i class="fas fa-trash-alt"></i><span>Delete</span>
+      </p>
+    </div>
+  </div>
+</div>

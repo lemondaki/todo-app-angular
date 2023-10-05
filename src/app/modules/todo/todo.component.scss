@@ -1,0 +1,77 @@
+@import "../../shared/style/mixin.scss";
+#app {
+  max-width: 750px;
+  min-height: 700px;
+  margin: 20px auto;
+  border-radius: 6px;
+}
+
+.todo-body {
+  padding: 20px 40px;
+}
+
+header {
+  p {
+    margin: 8px 0;
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 600;
+    gap: 10px;
+    @include flex-center;
+  }
+}
+
+.top-card {
+  @include flex-align-center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 20px;
+}
+
+.todo-list {
+  margin-top: 30px;
+}
+
+.description {
+  font-size: 20px;
+}
+
+.mt-3 {
+  margin-top: 20px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  h2 {
+    font-size: 40px;
+    color: #ccc;
+  }
+}
+
+.container {
+  max-width: 800px;
+}
+
+.card-body {
+  border: none;
+}
+
+.filter-title {
+  font-size: 20px;
+}
+
+.todo-list-description {
+  @include flex-center;
+  margin-top: 150px;
+  p {
+    font-size: 25px;
+    font-weight: 550;
+    color: #6e6b6b;
+    max-width: 400px;
+    text-align: center;
+  }
+}

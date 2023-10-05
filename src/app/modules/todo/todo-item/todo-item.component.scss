@@ -1,0 +1,93 @@
+@import "../../../shared/style/mixin.scss";
+.todo-item {
+  padding: 25px 20px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  @include flex-align-center;
+  justify-content: space-between;
+}
+
+.todo-item-left {
+  @include flex-align-center-gap(30px);
+  align-items: flex-start;
+  .todo-task {
+    margin: 0 0 22px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 100%;
+  }
+}
+
+.todo-item-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.action-edit {
+  color: var(--primary-color);
+  margin: 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.action-delete {
+  color: var(--danger-color);
+  margin: 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.datetime-infor {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 19px;
+  color: var(--gray-color);
+  margin: 0;
+}
+
+.label-todo {
+  display: flex;
+  gap: 14px;
+}
+
+.action-todo {
+  display: flex;
+  justify-content: space-between;
+  span {
+    margin-left: 6px;
+  }
+}
+
+.label {
+  display: inline-block;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: default;
+}
+
+.success-label {
+  background-color: var(--success-label);
+}
+.danger-label {
+  background-color: var(--danger-label);
+}
+.warning-label {
+  background-color: var(--waring-label);
+}
+.primary-label {
+  background-color: var(--primary-label);
+}
+.secondary-label {
+  background-color: var(--secondary-label);
+}
+
+.completed {
+  text-decoration: line-through;
+}

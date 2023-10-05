@@ -1,0 +1,13 @@
+<div class="radio-button">
+  <input
+    type="radio"
+    name="radioButton"
+    id="radioButton"
+    value="{{ filterStatus.status }}"
+    [checked]="filterStatus.status === activeFilter"
+    (click)="selectFilterStatus(filterStatus.status)"
+  />
+  <label class="filter-name" for="radioButton">
+    {{ filterStatus.status }} ({{ filterStatus.count }})
+  </label>
+</div>

@@ -1,0 +1,10 @@
+<div *ngIf="isShowToast" id="toast" [class]="'toast ' + toast.style">
+  <div class="toast__icon"><i [class]="toast.icon"></i></div>
+  <div class="toast__body">
+    <h3 class="toast__title">{{ toast.title }}</h3>
+    <p class="toast__msg">{{ toast.message }}</p>
+  </div>
+  <div class="toast__close" (click)="handleCloseToast()">
+    <i class="fas fa-times"></i>
+  </div>
+</div>

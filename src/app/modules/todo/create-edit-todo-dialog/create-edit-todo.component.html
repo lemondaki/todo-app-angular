@@ -1,0 +1,38 @@
+<app-dialog [titleAction]="titleAction">
+  <form [formGroup]="inforTodoForm">
+    <div class="task-input">
+      <label for="task">Task:</label>
+      <app-text-field formControlName="task"></app-text-field>
+      <p *ngIf="validateRequired('task')" class="errors">
+        This field is required!
+      </p>
+      <p class="errors" *ngIf="validateMinlength()">
+        Task must be at least
+        {{ validateMinlength().requiredLength }}
+        characters long.
+      </p>
+    </div>
+    <div class="deadline-input">
+      <label for="deadline">Deadline:</label>
+      <app-date-picker formControlName="deadline"></app-date-picker>
+      <p *ngIf="validateRequired('deadline')" class="errors">
+        This field is required!
+      </p>
+    </div>
+
+    <div class="wrapper-button">
+      <app-button [type]="'secondary-btn'" (click)="handleCloseDialog()"
+        >Cancel
+      </app-button>
+      <app-button
+        [isDisabled]="
+          inforTodoForm.invalid || !inforTodoForm.controls['task'].value.trim()
+        "
+        [type]="'primary-btn'"
+        (click)="handleSaveTodo()"
+      >
+        {{ titleAction === Action.ADD ? "Save" : "Update" }}
+      </app-button>
+    </div>
+  </form>
+</app-dialog>

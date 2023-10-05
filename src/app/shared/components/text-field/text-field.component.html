@@ -1,0 +1,8 @@
+<input
+  placeholder="Add a new todo..."
+  name="todo"
+  type="text"
+  [formControl]="taskInput"
+  (input)="onChange(taskInput.value)"
+  (blur)="onTouched()"
+/>

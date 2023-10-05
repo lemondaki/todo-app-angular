@@ -1,0 +1,7 @@
+<input
+  placeholder="toggle checkbox"
+  class="custom-shadow-btn user-not-select"
+  type="checkbox"
+  [checked]="todo.isCompleted"
+  (click)="eventToggleTodo.emit(todo)"
+/>

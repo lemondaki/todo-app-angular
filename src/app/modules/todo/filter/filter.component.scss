@@ -1,0 +1,8 @@
+@import "../../../shared/style/mixin.scss";
+.filter {
+  font-size: var(--main-fontSize);
+  @include flex-align-center-gap(10px);
+  .filter-choise {
+    @include flex-align-center-gap(14px);
+  }
+}

@@ -1,0 +1,18 @@
+@import "../../../shared/style/mixin.scss";
+.radio-button {
+  @include flex-center;
+  gap: 4px;
+  #radioButton {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.filter-name {
+  text-transform: capitalize;
+  margin-top: 2px;
+}

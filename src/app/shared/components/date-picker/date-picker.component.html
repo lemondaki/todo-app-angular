@@ -1,0 +1,8 @@
+<input
+  placeholder="Pick a deadline"
+  type="datetime-local"
+  name="deadline"
+  [formControl]="deadlineInput"
+  (input)="onChange(deadlineInput.value)"
+  (blur)="onTouched()"
+/>

@@ -1,0 +1,11 @@
+<app-dialog [titleAction]="titleAction ">  
+  <p class="delete-desc">Do you want to delete: {{ deleteTodoInfor.task }}?</p>
+  <div class="wrapper-button">
+    <app-button [type]="'secondary-btn'" (click)="handleCloseDialog()">
+      Cancel
+    </app-button>
+    <app-button [type]="'danger-btn'" (click)="handleDeleteTodo()">
+      Delete
+    </app-button>
+  </div>
+</app-dialog>
